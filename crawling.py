@@ -28,7 +28,6 @@ elem = driver.find_element(By.NAME, "q")
 
 elem.send_keys(search_query)
 elem.send_keys(Keys.RETURN)
-time.sleep(2)
 
 # 사용자 지정 폴더 경로 설정
 custom_path = "C:/Users/kimmc/PycharmProjects/Animal_Face/"
@@ -60,7 +59,6 @@ def scroll_down(driver, scroll_pause_time=1, max_scrolls=10):
 
 # 스크롤 다운 실행
 scroll_down(driver, scroll_pause_time=2, max_scrolls=10)
-time.sleep(2)
 
 image_urls = []
 small_images = driver.find_elements(By.CSS_SELECTOR, ".YQ4gaf")
@@ -91,7 +89,8 @@ for i, real_image in enumerate(real_images[:max_images]):
             print(f"이미지 {i} 저장 완료!: {image_src}")
 
         # 이미지 로딩 및 클릭 간 시간 지연을 위해 대기
-        time.sleep(1)
+        time.sleep(0.5)
 
     except Exception as e:
         print(f"이미지 처리 중 오류 발생: {e}")
+
